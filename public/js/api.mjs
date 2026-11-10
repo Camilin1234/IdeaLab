@@ -2,7 +2,7 @@
 // - En Netlify (frontend publicado) se usa el backend publicado en Render.
 // - En local (npm start) o si Render sirve todo, se usa el mismo origen ("").
 // CAMBIA esta dirección por la URL real que te asigne Render.
-const URL_BACKEND_RENDER = "https://idealab-api.onrender.com";
+const URL_BACKEND_RENDER = "https://idealab-c1w5.onrender.com";
 const API_BASE = window.location.hostname.endsWith(".netlify.app") ? URL_BACKEND_RENDER : "";
 
 export async function solicitarPropuestas(datos) {
