@@ -1,0 +1,212 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1060" width="1600" height="1060" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2937"/></marker>
+    <marker id="flv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#15803d"/></marker>
+    <marker id="flg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/></marker>
+    <g id="ic">
+      <rect x="0" y="0" width="18" height="22" fill="#fff" stroke="#1f2937" stroke-width="1.4"/>
+      <rect x="-5" y="4" width="10" height="5" fill="#fff" stroke="#1f2937" stroke-width="1.4"/>
+      <rect x="-5" y="13" width="10" height="5" fill="#fff" stroke="#1f2937" stroke-width="1.4"/>
+    </g>
+  </defs>
+  <style>
+    .t{font-size:30px;font-weight:700;fill:#111827}
+    .st{font-size:16px;fill:#4b5563}
+    .node{font-size:19px;font-weight:700}
+    .cn{font-size:17px;font-weight:700;fill:#111827}
+    .cd{font-size:13.5px;fill:#374151}
+    .st2{font-size:13px;fill:#6b7280;font-style:italic}
+    .lb{font-size:13.5px;fill:#111827}
+    .lbb{font-size:13.5px;fill:#111827;font-weight:700}
+    .num{font-size:14px;font-weight:700;fill:#fff}
+    .comp{fill:#fff;stroke:#1f2937;stroke-width:1.6}
+  </style>
+  <rect width="1600" height="1060" fill="#ffffff"/>
+
+  <text x="40" y="52" class="t">IdeaLab — Diagrama de componentes</text>
+  <text x="40" y="80" class="st">Frontend publicado en Netlify · Backend Node.js + Express publicado en Render · Código fuente en GitHub</text>
+
+  <!-- ================= NODO NAVEGADOR / NETLIFY ================= -->
+  <rect x="30" y="110" width="700" height="740" rx="14" fill="#eef4ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="52" y="142" class="node" fill="#1d4ed8">«nodo» Navegador del usuario</text>
+  <text x="52" y="164" class="st">Frontend servido desde Netlify: https://&lt;tu-sitio&gt;.netlify.app</text>
+
+  <!-- index.html -->
+  <rect x="60" y="190" width="300" height="150" rx="6" class="comp"/>
+  <use href="#ic" x="327" y="202"/>
+  <text x="76" y="212" class="st2">«vista HTML»</text>
+  <text x="76" y="236" class="cn">index.html</text>
+  <text x="76" y="260" class="cd">Formulario, resultados, favoritos</text>
+  <text x="76" y="280" class="cd">Bootstrap 5.3.8 (CDN): container,</text>
+  <text x="76" y="298" class="cd">row, col-*, navbar, alert, btn</text>
+  <text x="76" y="318" class="cd">Tema claro/oscuro: data-bs-theme</text>
+
+  <!-- estilos.css -->
+  <rect x="60" y="370" width="300" height="80" rx="6" class="comp"/>
+  <use href="#ic" x="327" y="382"/>
+  <text x="76" y="392" class="st2">«hoja de estilos»</text>
+  <text x="76" y="416" class="cn">estilos.css</text>
+  <text x="76" y="436" class="cd">Estilos propios, foco visible</text>
+  <line x1="210" y1="340" x2="210" y2="370" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#flg)"/>
+
+  <!-- app.mjs -->
+  <rect x="410" y="190" width="290" height="160" rx="6" class="comp"/>
+  <use href="#ic" x="667" y="202"/>
+  <text x="426" y="212" class="st2">«módulo JS»</text>
+  <text x="426" y="236" class="cn">app.mjs</text>
+  <text x="426" y="260" class="cd">addEventListener (submit, click)</text>
+  <text x="426" y="280" class="cd">Delegación: Copiar/Guardar/Eliminar</text>
+  <text x="426" y="300" class="cd">Actualiza el DOM con createElement</text>
+  <text x="426" y="318" class="cd">+ textContent (evita XSS)</text>
+  <text x="426" y="338" class="cd">Mensajes de estado y aria-live</text>
+
+  <!-- api.mjs -->
+  <rect x="410" y="420" width="290" height="140" rx="6" class="comp"/>
+  <use href="#ic" x="667" y="432"/>
+  <text x="426" y="442" class="st2">«módulo JS»</text>
+  <text x="426" y="466" class="cn">api.mjs</text>
+  <text x="426" y="490" class="cd">solicitarPropuestas()</text>
+  <text x="426" y="510" class="cd">fetch + async/await, response.ok</text>
+  <text x="426" y="530" class="cd">API_BASE = URL de Render</text>
+  <text x="426" y="548" class="cd">(definida en un solo lugar)</text>
+
+  <!-- utilidades.mjs -->
+  <rect x="60" y="500" width="300" height="130" rx="6" class="comp"/>
+  <use href="#ic" x="327" y="512"/>
+  <text x="76" y="522" class="st2">«módulo JS»</text>
+  <text x="76" y="546" class="cn">utilidades.mjs</text>
+  <text x="76" y="570" class="cd">leer/guardarTema, leer/guardarFavoritos</text>
+  <text x="76" y="590" class="cd">agregarAlHistorialSesion()</text>
+  <text x="76" y="610" class="cd">JSON.stringify / JSON.parse, null</text>
+
+  <!-- Web Storage -->
+  <path d="M90,680 a120,16 0 0,0 240,0 v110 a120,16 0 0,1 -240,0 z" fill="#fff7e6" stroke="#b45309" stroke-width="1.6"/>
+  <ellipse cx="210" cy="680" rx="120" ry="16" fill="#fff7e6" stroke="#b45309" stroke-width="1.6"/>
+  <text x="210" y="720" class="cn" text-anchor="middle">Web Storage</text>
+  <text x="210" y="745" class="cd" text-anchor="middle">localStorage: tema, favoritos</text>
+  <text x="210" y="765" class="cd" text-anchor="middle">sessionStorage: historial</text>
+  <text x="210" y="785" class="cd" text-anchor="middle">(sin datos sensibles)</text>
+
+  <!-- index -> app (carga) -->
+  <line x1="360" y1="250" x2="408" y2="250" stroke="#6b7280" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#flg)"/>
+  <text x="363" y="240" class="st2">carga</text>
+
+  <!-- 1 evento usuario -->
+  <line x1="360" y1="300" x2="408" y2="300" stroke="#1f2937" stroke-width="2" marker-end="url(#fl)"/>
+  <circle cx="384" cy="318" r="11" fill="#2563eb"/><text x="384" y="323" class="num" text-anchor="middle">1</text>
+
+  <!-- 2 app -> api -->
+  <line x1="530" y1="350" x2="530" y2="418" stroke="#1f2937" stroke-width="2" marker-end="url(#fl)"/>
+  <circle cx="512" cy="384" r="11" fill="#2563eb"/><text x="512" y="389" class="num" text-anchor="middle">2</text>
+  <text x="545" y="390" class="lb">import</text>
+
+  <!-- 6 api -> app (datos) -->
+  <line x1="640" y1="418" x2="640" y2="352" stroke="#15803d" stroke-width="2" marker-end="url(#flv)"/>
+  <circle cx="658" cy="384" r="11" fill="#15803d"/><text x="658" y="389" class="num" text-anchor="middle">6</text>
+
+  <!-- 7 app -> utilidades -> storage -->
+  <path d="M410,335 L385,335 L385,520 L362,520" fill="none" stroke="#1f2937" stroke-width="2" marker-end="url(#fl)"/>
+  <circle cx="385" cy="470" r="11" fill="#2563eb"/><text x="385" y="475" class="num" text-anchor="middle">7</text>
+  <line x1="210" y1="630" x2="210" y2="662" stroke="#b45309" stroke-width="2" marker-end="url(#fl)" marker-start="url(#fl)"/>
+  <text x="222" y="652" class="lb">getItem / setItem</text>
+
+  <!-- ================= NODO RENDER ================= -->
+  <rect x="900" y="110" width="670" height="740" rx="14" fill="#effbf3" stroke="#15803d" stroke-width="2.5"/>
+  <text x="922" y="142" class="node" fill="#15803d">«nodo» Render — Web Service</text>
+  <text x="922" y="164" class="st">Backend: https://idealab-api.onrender.com · npm start · Node ≥ 20</text>
+
+  <!-- server.js -->
+  <rect x="1010" y="190" width="520" height="330" rx="6" class="comp"/>
+  <use href="#ic" x="1497" y="202"/>
+  <text x="1028" y="214" class="st2">«servidor»</text>
+  <text x="1028" y="240" class="cn">server.js — Node.js + Express</text>
+  <text x="1028" y="270" class="lbb">Middlewares</text>
+  <text x="1028" y="292" class="cd">helmet (cabeceras + CSP) · compression (gzip)</text>
+  <text x="1028" y="312" class="cd">cors: solo orígenes de ALLOWED_ORIGINS (Netlify)</text>
+  <text x="1028" y="332" class="cd">express.json({ limit: "10kb" }) · rate limit 30 / 15 min</text>
+  <text x="1028" y="362" class="lbb">Rutas (responden JSON)</text>
+  <text x="1028" y="384" class="cd">GET  /api/salud    → 200 { ok: true }</text>
+  <text x="1028" y="404" class="cd">POST /api/generar → valida negocio (3–80) y estilo</text>
+  <text x="1028" y="424" class="cd">       200 propuestas · 400 datos inválidos · 429 límite</text>
+  <text x="1028" y="444" class="cd">/api/* inexistente → 404 · error interno → 500</text>
+  <text x="1028" y="474" class="lbb">Variables de entorno (panel Environment)</text>
+  <text x="1028" y="496" class="cd">PORT · ALLOWED_ORIGINS · OLLAMA_ENABLED (sin .env en Git)</text>
+
+  <!-- interfaces lollipop -->
+  <line x1="960" y1="300" x2="1010" y2="300" stroke="#1f2937" stroke-width="1.8"/>
+  <circle cx="950" cy="300" r="10" fill="#fff" stroke="#1f2937" stroke-width="2"/>
+  <text x="950" y="330" class="lbb" text-anchor="middle">POST</text><text x="950" y="347" class="lbb" text-anchor="middle">/api/generar</text>
+
+  <line x1="960" y1="420" x2="1010" y2="420" stroke="#1f2937" stroke-width="1.8"/>
+  <circle cx="950" cy="420" r="10" fill="#fff" stroke="#1f2937" stroke-width="2"/>
+  <text x="950" y="448" class="lbb" text-anchor="middle">GET</text><text x="950" y="465" class="lbb" text-anchor="middle">/api/salud</text>
+
+  <!-- generador -->
+  <rect x="1010" y="590" width="520" height="110" rx="6" class="comp"/>
+  <use href="#ic" x="1497" y="602"/>
+  <text x="1028" y="614" class="st2">«módulo de servicio»</text>
+  <text x="1028" y="640" class="cn">src/servicios/generador.mjs</text>
+  <text x="1028" y="664" class="cd">generarPropuestas(negocio, estilo)</text>
+  <text x="1028" y="684" class="cd">→ 4 nombres + 4 eslóganes (generador local)</text>
+
+  <!-- 4 server -> generador -->
+  <line x1="1100" y1="520" x2="1100" y2="588" stroke="#1f2937" stroke-width="2" marker-end="url(#fl)"/>
+  <circle cx="1082" cy="554" r="11" fill="#2563eb"/><text x="1082" y="559" class="num" text-anchor="middle">4</text>
+  <text x="1115" y="545" class="lb">import { generarPropuestas }</text>
+  <line x1="1440" y1="588" x2="1440" y2="522" stroke="#15803d" stroke-width="2" marker-end="url(#flv)"/>
+  <text x="1428" y="578" class="lb" text-anchor="end">{ nombres, esloganes }</text>
+
+  <!-- Ollama opcional -->
+  <rect x="1060" y="745" width="420" height="80" rx="6" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="1270" y="775" class="cn" text-anchor="middle" fill="#6b7280">Ollama (API de IA opcional)</text>
+  <text x="1270" y="800" class="cd" text-anchor="middle" fill="#6b7280">Solo en desarrollo local, si OLLAMA_ENABLED=true</text>
+  <line x1="1270" y1="700" x2="1270" y2="743" stroke="#9ca3af" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#flg)"/>
+
+  <!-- ================= CONEXIÓN CLIENTE-SERVIDOR ================= -->
+  <!-- 3 request: api.mjs -> lollipop POST (socket) -->
+  <path d="M700,470 L800,470 L800,300 L932,300" fill="none" stroke="#1f2937" stroke-width="2.2"/>
+  <path d="M928,286 A14,14 0 0,1 928,314" fill="none" stroke="#1f2937" stroke-width="2.2"/>
+  <circle cx="770" cy="452" r="11" fill="#2563eb"/><text x="770" y="457" class="num" text-anchor="middle">3</text>
+  <rect x="738" y="186" width="160" height="96" rx="6" fill="#fff" stroke="#d1d5db"/>
+  <text x="818" y="206" class="lbb" text-anchor="middle">fetch HTTPS</text>
+  <text x="818" y="226" class="cd" text-anchor="middle">POST /api/generar</text>
+  <text x="818" y="246" class="cd" text-anchor="middle">Content-Type: JSON</text>
+  <text x="818" y="268" class="cd" text-anchor="middle">{ negocio, estilo }</text>
+
+  <!-- 5 response -->
+  <path d="M1010,500 L860,500 L860,530 L702,530" fill="none" stroke="#15803d" stroke-width="2.2" marker-end="url(#flv)"/>
+  <circle cx="880" cy="486" r="11" fill="#15803d"/><text x="880" y="491" class="num" text-anchor="middle">5</text>
+  <rect x="738" y="560" width="160" height="96" rx="6" fill="#fff" stroke="#bbf7d0"/>
+  <text x="818" y="580" class="lbb" text-anchor="middle" fill="#15803d">Respuesta JSON</text>
+  <text x="818" y="600" class="cd" text-anchor="middle">200 { nombres[4],</text>
+  <text x="818" y="620" class="cd" text-anchor="middle">esloganes[4] }</text>
+  <text x="818" y="642" class="cd" text-anchor="middle">o 400/404/429 { error }</text>
+
+  <!-- ================= GITHUB / DESPLIEGUE ================= -->
+  <rect x="560" y="900" width="480" height="120" rx="10" fill="#f3f4f6" stroke="#111827" stroke-width="2"/>
+  <text x="800" y="932" class="node" text-anchor="middle" fill="#111827">«repositorio» GitHub</text>
+  <text x="800" y="958" class="cd" text-anchor="middle">Código fuente + README + .gitignore (sin node_modules ni .env)</text>
+  <text x="800" y="980" class="cd" text-anchor="middle">Cada git push despliega automáticamente:</text>
+  <text x="800" y="1002" class="cd" text-anchor="middle">public/ → Netlify  ·  server.js + src/ → Render</text>
+  <path d="M560,960 L380,960 L380,852" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#flg)"/>
+  <text x="392" y="890" class="lb">«despliega» public/</text>
+  <path d="M1040,960 L1070,960 L1070,852" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#flg)"/>
+  <text x="1060" y="880" class="lb" text-anchor="end">«despliega» npm install · npm start</text>
+
+  <!-- CDN -->
+  <rect x="60" y="900" width="300" height="70" rx="8" fill="#fff" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="210" y="928" class="cn" text-anchor="middle">CDN jsDelivr</text>
+  <text x="210" y="950" class="cd" text-anchor="middle">bootstrap@5.3.8 css + js</text>
+  <line x1="210" y1="900" x2="210" y2="852" stroke="#9ca3af" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#flg)"/>
+
+  <!-- Leyenda -->
+  <rect x="1100" y="890" width="470" height="150" rx="8" fill="#fff" stroke="#d1d5db"/>
+  <text x="1118" y="914" class="lbb">Flujo de una acción (del clic al DOM)</text>
+  <text x="1118" y="936" class="cd">1 Submit del formulario → app.mjs   2 app.mjs llama a api.mjs</text>
+  <text x="1118" y="956" class="cd">3 fetch POST a Render   4 Express valida y llama a generador.mjs</text>
+  <text x="1118" y="976" class="cd">5 Express responde JSON   6 api.mjs devuelve los datos a app.mjs</text>
+  <text x="1118" y="996" class="cd">7 app.mjs pinta el DOM y guarda favoritos/historial</text>
+  <circle cx="1128" cy="1020" r="9" fill="#fff" stroke="#1f2937" stroke-width="2"/><text x="1145" y="1025" class="cd">interfaz ofrecida</text>
+  <path d="M1268,1011 A10,10 0 0,1 1268,1029" fill="none" stroke="#1f2937" stroke-width="2"/><text x="1280" y="1025" class="cd">interfaz requerida</text>
+  <line x1="1410" y1="1020" x2="1440" y2="1020" stroke="#15803d" stroke-width="2"/><text x="1448" y="1025" class="cd">respuesta</text>
+</svg>
