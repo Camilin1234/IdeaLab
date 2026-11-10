@@ -1,0 +1,17 @@
+# Netlify publica solo el frontend (carpeta public).
+# El backend (server.js) se publica en Render.
+[build]
+  publish = "public"
+  command = ""
+
+# Los módulos .mjs deben llegar como JavaScript.
+[[headers]]
+  for = "/*.mjs"
+  [headers.values]
+    Content-Type = "text/javascript; charset=utf-8"
+
+# Caché para recursos estáticos (optimización).
+[[headers]]
+  for = "/estilos.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

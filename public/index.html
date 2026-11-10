@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="IdeaLab te ayuda a crear nombres y eslóganes para tu próximo negocio.">
+  <meta name="theme-color" content="#17152b">
+  <title>IdeaLab | Crea la identidad de tu negocio</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/estilos.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script type="module" src="/js/app.mjs"></script>
+</head>
+<body>
+  <a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark container py-3" aria-label="Navegación principal">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#inicio">
+        <span class="brand-mark" aria-hidden="true">✦</span><span>IdeaLab</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#generador">Generador</a></li>
+          <li class="nav-item"><a class="nav-link" href="#favoritos">Favoritos <span id="contadorFavoritos" class="badge rounded-pill text-bg-light">0</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="#como-funciona">Cómo funciona</a></li>
+          <li class="nav-item ms-lg-2"><button class="btn btn-outline-light btn-sm" id="botonTema" type="button" aria-label="Cambiar a tema oscuro">🌙 Tema oscuro</button></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero-section" id="inicio">
+      <div class="container">
+        <div class="row align-items-center g-5 py-5">
+          <div class="col-12 col-lg-7">
+            <span class="eyebrow">TU IDEA MERECE UNA GRAN MARCA</span>
+            <h1 class="display-3 fw-bold mt-3">Dale un nombre a tu <span>próxima gran idea.</span></h1>
+            <p class="lead hero-copy mt-4">Crea nombres y eslóganes para tu negocio, explora estilos y guarda las propuestas que mejor representen tu marca.</p>
+            <a class="btn btn-primary btn-lg mt-3" href="#generador">Empezar a crear <span aria-hidden="true">→</span></a>
+            <p class="small text-white-50 mt-3 mb-0">Sin registro · Propuestas en español · Tus favoritos quedan en este navegador</p>
+          </div>
+          <div class="col-12 col-lg-5">
+            <div class="hero-preview">
+              <div class="preview-label">IDEA DESTACADA</div>
+              <div class="preview-name">Café Nube</div>
+              <p>Tu momento empieza aquí.</p>
+              <div class="preview-orbit orbit-one"></div><div class="preview-orbit orbit-two"></div>
+              <span class="preview-spark spark-one">✦</span><span class="preview-spark spark-two">✧</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section-space" id="generador" aria-labelledby="tituloGenerador">
+      <div class="section-heading mb-4">
+        <span class="section-number">01</span>
+        <div><p class="eyebrow mb-1">CREADOR DE IDEAS</p><h2 class="h1 fw-bold mb-0" id="tituloGenerador">Construye tu identidad</h2></div>
+      </div>
+      <div class="row g-4 align-items-stretch">
+        <div class="col-12 col-lg-4">
+          <aside class="info-panel h-100">
+            <span class="info-icon" aria-hidden="true">✦</span>
+            <h3 class="h4 fw-bold mt-3">Cuéntanos sobre tu negocio</h3>
+            <p class="mb-0">Describe tu emprendimiento y selecciona el estilo que quieres transmitir. IdeaLab preparará cuatro nombres y cuatro eslóganes.</p>
+            <hr>
+            <p class="small mb-1"><strong>Consejo:</strong> sé específico.</p>
+            <p class="small muted mb-0">Ejemplo: cafetería artesanal de especialidad con postres caseros.</p>
+          </aside>
+        </div>
+        <div class="col-12 col-lg-8">
+          <form id="formulario" class="form-panel" novalidate>
+            <div class="mb-3">
+              <label for="negocio" class="form-label fw-semibold">Tipo de negocio</label>
+              <input class="form-control form-control-lg" id="negocio" name="negocio" type="text" minlength="3" maxlength="80" placeholder="Ej. cafetería artesanal" required aria-describedby="ayudaNegocio">
+              <div class="form-text" id="ayudaNegocio">Entre 3 y 80 caracteres. No incluyas datos personales.</div>
+            </div>
+            <div class="mb-4">
+              <label for="estilo" class="form-label fw-semibold">Estilo de la marca</label>
+              <select class="form-select form-select-lg" id="estilo" name="estilo" required>
+                <option value="moderno">Moderno y minimalista</option>
+                <option value="creativo">Creativo y diferente</option>
+                <option value="elegante">Elegante y sofisticado</option>
+                <option value="juvenil">Juvenil y divertido</option>
+                <option value="tradicional">Tradicional y cercano</option>
+              </select>
+            </div>
+            <div class="d-flex flex-wrap gap-2 align-items-center">
+              <button class="btn btn-primary btn-lg" id="botonGenerar" type="submit"><span id="textoBoton">Generar propuestas</span><span class="ms-2" aria-hidden="true">✦</span></button>
+              <button class="btn btn-outline-secondary btn-lg" id="botonLimpiar" type="button">Limpiar</button>
+            </div>
+            <div id="estado" class="alert alert-info mt-3 mb-0" role="status" aria-live="polite">Listo para crear nuevas ideas.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section-space pt-0" id="resultados" aria-labelledby="tituloResultados">
+      <div class="section-heading mb-4">
+        <span class="section-number">02</span>
+        <div><p class="eyebrow mb-1">TUS PROPUESTAS</p><h2 class="h1 fw-bold mb-0" id="tituloResultados">Nombres y eslóganes</h2></div>
+      </div>
+      <div id="contenedorResultados" class="row g-4">
+        <div class="col-12"><div class="empty-state"><span aria-hidden="true">✧</span><h3 class="h5">Aún no hay propuestas</h3><p class="mb-0">Completa el formulario para comenzar.</p></div></div>
+      </div>
+    </section>
+
+    <section class="container section-space pt-0" id="favoritos" aria-labelledby="tituloFavoritos">
+      <div class="section-heading mb-4 flex-wrap">
+        <span class="section-number">03</span>
+        <div class="me-auto"><p class="eyebrow mb-1">TUS ELECCIONES</p><h2 class="h1 fw-bold mb-0" id="tituloFavoritos">Ideas favoritas</h2></div>
+        <button class="btn btn-outline-danger btn-sm" id="botonBorrarDatos" type="button">Borrar mis datos</button>
+      </div>
+      <div id="listaFavoritos" class="row g-3">
+        <div class="col-12"><p class="muted">Todavía no has guardado favoritos. Usa el botón “Guardar” en una propuesta.</p></div>
+      </div>
+    </section>
+
+    <section class="container section-space pt-0" id="como-funciona">
+      <div class="how-panel">
+        <p class="eyebrow mb-2">TECNOLOGÍA DETRÁS DE IDEALAB</p>
+        <h2 class="h3 fw-bold">Una experiencia sencilla, respaldada por una arquitectura real.</h2>
+        <div class="row g-3 mt-2">
+          <div class="col-12 col-md-4"><div class="tech-item"><strong>01 · Interfaz</strong><p>HTML, Bootstrap y JavaScript modular.</p></div></div>
+          <div class="col-12 col-md-4"><div class="tech-item"><strong>02 · Servidor</strong><p>Node.js y Express validan la solicitud y responden JSON.</p></div></div>
+          <div class="col-12 col-md-4"><div class="tech-item"><strong>03 · Persistencia</strong><p>El navegador conserva tema, favoritos y datos temporales de la sesión.</p></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <div><strong>IdeaLab</strong><p class="small mb-0">Generador de nombres y eslóganes para emprendimientos.</p></div>
+      <p class="small mb-0">Proyecto académico · Desarrollo Web · UNISANGIL</p>
+    </div>
+  </footer>
+</body>
+</html>
